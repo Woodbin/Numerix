@@ -7,6 +7,7 @@ public class Main {
 
 
     public static void main(String args[]){
-
+        ItkenNevill it = new ItkenNevill();
+        it.test();
     }
 }

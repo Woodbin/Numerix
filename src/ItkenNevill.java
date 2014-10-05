@@ -12,16 +12,24 @@ public class ItkenNevill {
     public ItkenNevill(){
     }
 
-    public double count(){
-        for(int i = 0; i<polynome.size();i++){
-            for(int j = polynome.size()-1; j>i;j--){
-                double itken= (((x-(j-i))*polynome.get(j))-((x-j)*polynome.get(j-1)))/(j-(j-i));
-                System.out.println("j: "+j+" i: "+i+" :: "+itken);
-                polynome.set(j, itken);
+    public ArrayList<Double> count(){
+        ArrayList<Double> newVals = new ArrayList<Double>(polynome);
+         for(int i = 1; i<newVals.size();i++){
+            for(int j = newVals.size()-1; j>=i;j--){
+                System.out.println(j+" "+i+" :(x)o-(o)o / o  ;"+" :x-(j-i): "+(x-(j-i)));
+                System.out.println(j+" "+i+" :(o)x-(o)o / o  ;"+" :get(j): "+newVals.get(j));
+                System.out.println(j+" "+i+" :(o)o-(x)o / o  ;"+" :x-j: "+(x-j));
+                System.out.println(j+" "+i+" :(o)o-(o)x / o  ;"+" :get(j-1): "+newVals.get(j-1));
+                System.out.println(j+" "+i+" :(o)o-(o)o / x  ;"+" :j-(j-i): "+(j-(j-i)));
+
+
+                double itken= (((x-(j-i))*newVals.get(j))-((x-j)*newVals.get(j - 1)))/((j-(j-i)));
+                System.out.println("ITKEN "+j+" "+i+" :: "+itken);
+                newVals.set(j, itken);
             }
         }
 
-        return polynome.get(polynome.size()-1);
+        return newVals;
     }
 
 
@@ -36,8 +44,10 @@ public class ItkenNevill {
     public void test(){
         ArrayList<Double> vals = new ArrayList<Double>(Arrays.asList(new Double(2),new Double(4),new Double(4),new Double(3),new Double(0)));
         fill(vals);
-        setX(new Double(5/2));
-        count();
+        setX(new Double(2.5));
+        for (Double aDouble : count()) {
+            System.out.println(aDouble);
+        };
     }
 
 }
