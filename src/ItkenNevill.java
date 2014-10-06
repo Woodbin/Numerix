@@ -42,7 +42,7 @@ public class ItkenNevill {
     }
 
     public void test(){
-        ArrayList<Double> vals = new ArrayList<Double>(Arrays.asList(new Double(2),new Double(4),new Double(4),new Double(3),new Double(0)));
+        ArrayList<Double> vals = new ArrayList<Double>(Arrays.asList(new Double(3),new Double(4),new Double(4),new Double(3),new Double(0)));
         fill(vals);
         setX(new Double(2.5));
         for (Double aDouble : count()) {
